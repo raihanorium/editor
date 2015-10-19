@@ -1,0 +1,26 @@
+{
+  "name": "editor",
+  "version": "1.0.0",
+  "description": "Text editor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raihanorium/editor.git"
+  },
+  "keywords": [
+    "editor"
+  ],
+  "author": "Raihan (raihan.dk@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raihanorium/editor/issues"
+  },
+  "homepage": "https://github.com/raihanorium/editor#readme",
+  "devDependencies": {
+    "bower": "^1.6.3",
+    "grunt": "^0.4.5"
+  }
+}
