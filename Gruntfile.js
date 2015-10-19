@@ -27,18 +27,15 @@ module.exports = function (grunt) {
 			},
 			vendor_js: {
 				src: '<%= vendor_files.js %>',
-				dest: '<%= output_dir %>/',
-				cwd: '.'
+				dest: '<%= output_dir %>/'
 			},
 			vendor_fonts: {
 				src: '<%= vendor_files.fonts %>',
-				dest: '<%= output_dir %>/',
-				cwd: '.'
+				dest: '<%= output_dir %>/'
 			},
 			vendor_assets: {
 				src: '<%= vendor_files.assets %>',
-				dest: '<%= output_dir %>/vendor/assets/',
-				cwd: '.'
+				dest: '<%= output_dir %>/vendor/assets/'
 			}
 		},
 
