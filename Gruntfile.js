@@ -53,6 +53,10 @@ module.exports = function (grunt) {
 				src: '<%= vendor_files.assets %>',
 				dest: '<%= output_dir %>/vendor/assets/'
 			},
+			app: {
+				src: 'src/app/app.js',
+				dest: '<%= output_dir %>/app/app.js'
+			},
 			directives: {
 				src: '<%= concat_temp_dir %>/app/directives.js',
 				dest: '<%= output_dir %>/app/directives.js'

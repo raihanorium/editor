@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="editorApp" ng-controller="AppCtrl">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,11 +17,19 @@
 		<![endif]-->
 	</head>
 	<body>
+		<div top-navbar></div>
+
 		<h1>Text Editor</h1>
 
 		<!-- jQuery -->
-		<script src="vendor/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="vendor/jquery/dist/jquery.min.js"></script>
 		<!-- Bootstrap JavaScript -->
-		<script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+		<!-- AngularJS -->
+		<script type="text/javascript" src="vendor/angular/angular.min.js"></script>
+
+		<!-- app -->
+		<script type="text/javascript" src="app/app.js"></script>
+		<script type="text/javascript" src="app/directives.js"></script>
 	</body>
 </html>

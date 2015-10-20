@@ -5,7 +5,8 @@ module.exports = {
 	vendor_files: {
 	    js: [
 			'vendor/jquery/dist/jquery.min.js',
-			'vendor/bootstrap/dist/js/bootstrap.min.js'
+			'vendor/bootstrap/dist/js/bootstrap.min.js',
+			'vendor/angular/angular.min.js'
 	    ],
 	    css: [
 	    	'vendor/bootstrap/dist/css/bootstrap.min.css'
