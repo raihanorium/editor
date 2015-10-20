@@ -1,6 +1,7 @@
 module.exports = function (grunt) {
 	// include required plugins
 	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-watch');
@@ -12,7 +13,22 @@ module.exports = function (grunt) {
 
 		// describe clean task. this will delete the dest directory
 		clean: {
-			build: ['<%= output_dir %>']
+			output: ['<%= output_dir %>'],
+			tmp: ['<%= concat_temp_dir %>']
+		},
+
+		// describe concat task
+		concat: {
+			options: {
+				separator: '\n\n\n\n\n/******************************************************/\n\n\n\n',
+				stripBanners: true,
+				banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+					'<%= grunt.template.today("yyyy-mm-dd") %>\nAuthor: <%= pkg.author %> */\n\n\n\n'
+			},
+			dist: {
+				src: ['src/common/directives/*.js'],
+				dest: '<%= concat_temp_dir %>/app/directives.js',
+			},
 		},
 
 		// describe copy task
@@ -36,6 +52,10 @@ module.exports = function (grunt) {
 			vendor_assets: {
 				src: '<%= vendor_files.assets %>',
 				dest: '<%= output_dir %>/vendor/assets/'
+			},
+			directives: {
+				src: '<%= concat_temp_dir %>/app/directives.js',
+				dest: '<%= output_dir %>/app/directives.js'
 			}
 		},
 
@@ -72,7 +92,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('watch', ['build', 'connect', 'watching']);
 
 	// register build task
-	grunt.registerTask('build', ['clean', 'copy']);
+	grunt.registerTask('build', ['concat', 'clean:output', 'copy', 'clean:tmp']);
 
 	// register the default task
 	grunt.registerTask('default', ['build']);

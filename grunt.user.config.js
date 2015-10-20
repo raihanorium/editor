@@ -1,5 +1,6 @@
 module.exports = {
 	output_dir: 'dist',
+	concat_temp_dir: '.tmp',
 
 	vendor_files: {
 	    js: [
