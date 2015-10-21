@@ -1,4 +1,4 @@
-angular.module('editorDirectives')
+angular.module('editorDirectivesModule')
 
 	.directive('topNavbar', [function () {
 		return {

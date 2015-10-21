@@ -19,16 +19,26 @@ module.exports = function (grunt) {
 
 		// describe concat task
 		concat: {
-			options: {
-				separator: '\n\n\n\n\n/******************************************************/\n\n\n\n',
-				stripBanners: true,
-				banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
-					'<%= grunt.template.today("yyyy-mm-dd") %>\nAuthor: <%= pkg.author %> */\n\n\n\n'
-			},
-			dist: {
+			directives: {
+				options: {
+					separator: '\n\n\n\n\n/******************************************************/\n\n\n\n',
+					stripBanners: true,
+					banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+						'<%= grunt.template.today("yyyy-mm-dd") %>\nAuthor: <%= pkg.author %> */\n\n\n\n'
+				},
 				src: ['src/common/directives/*.js'],
-				dest: '<%= concat_temp_dir %>/app/directives.js',
+				dest: '<%= concat_temp_dir %>/app/directives.js'
 			},
+			services: {
+				options: {
+					separator: '\n\n\n\n\n/******************************************************/\n\n\n\n',
+					stripBanners: true,
+					banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+						'<%= grunt.template.today("yyyy-mm-dd") %>\nAuthor: <%= pkg.author %> */\n\n\n\n'
+				},
+				src: ['src/common/services/*.js'],
+				dest: '<%= concat_temp_dir %>/app/services.js'
+			}
 		},
 
 		// describe copy task
@@ -66,6 +76,10 @@ module.exports = function (grunt) {
 				src: '*.html',
 				dest: '<%= output_dir %>/app/',
 				expand: true
+			},
+			services: {
+				src: '<%= concat_temp_dir %>/app/services.js',
+				dest: '<%= output_dir %>/app/services.js'
 			}
 		},
 
