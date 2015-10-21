@@ -1,10 +1,9 @@
-angular.module('editorApp')
+angular.module('editorDirectives')
 
 	.directive('topNavbar', [function () {
 		return {
 			restrict: 'E',
-			link: function (scope, iElement, iAttrs) {
-				console.log(iElement);
-			}
+			templateUrl: 'app/top-navbar.tpl.html',
+			replace: true
 		};
 	}])

@@ -60,6 +60,12 @@ module.exports = function (grunt) {
 			directives: {
 				src: '<%= concat_temp_dir %>/app/directives.js',
 				dest: '<%= output_dir %>/app/directives.js'
+			},
+			directive_templates: {
+				cwd: 'src/common/directives',
+				src: '*.html',
+				dest: '<%= output_dir %>/app/',
+				expand: true
 			}
 		},
 
