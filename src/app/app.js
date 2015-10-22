@@ -2,7 +2,7 @@ angular.module('editorApp', ['editorMenuModule', 'editorDirectivesModule'])
 
 	.controller('AppCtrl', ['TopMenuService', function(TopMenuService) {
 		console.log('app initiated...');
-		TopMenuService.getAsJson();
+		console.log(TopMenuService.getAsJson());
 	}])
 ;
 
