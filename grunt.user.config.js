@@ -6,7 +6,9 @@ module.exports = {
 	    js: [
 			'vendor/jquery/dist/jquery.min.js',
 			'vendor/bootstrap/dist/js/bootstrap.min.js',
-			'vendor/angular/angular.min.js'
+			'vendor/angular/angular.min.js',
+			'vendor/angular-bootstrap/ui-bootstrap.min.js',
+			'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js'
 	    ],
 	    css: [
 	    	'vendor/bootstrap/dist/css/bootstrap.min.css'

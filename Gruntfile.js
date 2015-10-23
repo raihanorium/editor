@@ -85,7 +85,7 @@ module.exports = function (grunt) {
 
 		// describe watch task
 		watching: {
-			files:['src/**/*', 'Gruntfile.js'],
+			files:['src/**/*', 'Gruntfile.js', 'grunt.user.config.js'],
 			tasks: ['build'],
 	        options: {
 	          	livereload: true
