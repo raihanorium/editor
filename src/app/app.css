@@ -1,0 +1,9 @@
+*{
+	font-size: 9pt;
+}
+
+.top-navbar{border-radius: 0px;}
+.top-navbar .navbar-nav>li>.dropdown-menu{background-color: #333;}
+.top-navbar .dropdown-menu>li{border-bottom: 1px solid #444;}
+.top-navbar .dropdown-menu>li>a{color: #ccc;}
+.top-navbar .dropdown-menu>li>a:hover{color: #fff; background-color: #444;}
