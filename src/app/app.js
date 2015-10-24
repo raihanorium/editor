@@ -9,13 +9,9 @@ angular.module('editorApp', ['editorCurrentFilesModule', 'editorDirectivesModule
 		console.log('calling service...');
 		console.log(CurrentFilesService.getCurrentFiles());
 
-		$scope.newFile = function() {
-			console.log('clicked on newFile()...');
-			var newFile = {
-				text: 'text in file'
-			};
-			CurrentFilesService.addNewFile(newFile);
-		}
+		$scope.showAllFiles = function() {
+			CurrentFilesService.getCurrentFiles();
+		};
 	}])
 ;
 
