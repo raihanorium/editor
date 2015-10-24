@@ -14,18 +14,18 @@
 	<div class="collapse navbar-collapse navbar-ex1-collapse">
 		<ul class="nav navbar-nav">
 			<li ng-repeat="item in menu_items" ng-class="{true: 'dropdown'}[item.subItems.length > 0]">
-				<a ng-hide="item.subItems.length > 0" href="{{ item.link }}">
+				<a ng-click="item.whenClicked" ng-hide="item.subItems.length > 0" href="{{ item.link }}">
 					<span class="glyphicon glyphicon-{{ item.glyphicon }}"></span> {{ item.text }}
 				</a>
 				
-				<a ng-show="item.subItems.length > 0" href="{{ item.link }}" class="dropdown-toggle" data-toggle="dropdown">
+				<a ng-click="item.whenClicked" ng-show="item.subItems.length > 0" href="{{ item.link }}" class="dropdown-toggle" data-toggle="dropdown">
 					<span class="glyphicon glyphicon-{{ item.glyphicon }}"></span>
 					{{ item.text }} <b class="caret"></b>
 				</a>
 
 				<ul ng-show="item.subItems.length > 0" class="dropdown-menu">
 					<li ng-repeat="subItem in item.subItems">
-						<a href="{{ subItem.link }}">
+						<a set-on-click="{{ subItem.whenClicked }}" href="{{ subItem.link }}">
 							<span class="glyphicon glyphicon-{{ subItem.glyphicon }}"></span> {{ subItem.text }}
 						</a>
 					</li>

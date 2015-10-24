@@ -12,3 +12,14 @@ angular.module('editorDirectivesModule')
 			}
 		};
 	}])
+
+	.directive("setOnClick", ['$compile', function($compile){
+		return {
+			restrict: "A",
+			link: function(scope, elm, attrs){
+				elm.attr("ng-click", attrs.setOnClick);
+				elm.removeAttr("set-on-click");
+				$compile(elm)(scope);
+			}
+		};
+	}])

@@ -1,12 +1,16 @@
 angular.module('editorApp', ['editorCurrentFilesModule', 'editorDirectivesModule'])
 
-	.controller('AppCtrl', ['$scope', 'CurrentFilesService', function($scope, CurrentFilesService) {
+	.controller('AppCtrl', ['$scope', 'CurrentFilesService', 'TopMenuService', function($scope, CurrentFilesService, TopMenuService) {
 		console.log('app initiated...');
+
+		console.log('calling TopMenuService...');
+		console.log(TopMenuService.getAsJson());
 		
 		console.log('calling service...');
 		console.log(CurrentFilesService.getCurrentFiles());
 
 		$scope.newFile = function() {
+			console.log('clicked on newFile()...');
 			var newFile = {
 				text: 'text in file'
 			};
