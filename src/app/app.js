@@ -1,11 +1,7 @@
-angular.module('editorApp', ['editorCurrentFilesModule', 'editorDirectivesModule'])
+angular.module('editorApp', ['editorCurrentFilesModule', 'editorDirectivesModule', 'ui.bootstrap'])
 
 	.controller('AppCtrl', ['$scope', 'CurrentFilesService', 'TopMenuService', function($scope, CurrentFilesService, TopMenuService) {
 		console.log('app initiated...');
-
-		$scope.showAllFiles = function() {
-			CurrentFilesService.getCurrentFiles();
-		};
 	}])
 ;
 

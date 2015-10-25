@@ -19,6 +19,16 @@ module.exports = function (grunt) {
 
 		// describe concat task
 		concat: {
+			controllers: {
+				options: {
+					separator: '\n\n\n\n\n/******************************************************/\n\n\n\n',
+					stripBanners: true,
+					banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+						'<%= grunt.template.today("yyyy-mm-dd") %>\nAuthor: <%= pkg.author %> */\n\n\n\n'
+				},
+				src: ['src/common/controllers/*.js'],
+				dest: '<%= concat_temp_dir %>/app/controllers.js'
+			},
 			directives: {
 				options: {
 					separator: '\n\n\n\n\n/******************************************************/\n\n\n\n',
@@ -70,6 +80,10 @@ module.exports = function (grunt) {
 			app_js: {
 				src: 'src/app/app.js',
 				dest: '<%= output_dir %>/app/app.js'
+			},
+			controllers: {
+				src: '<%= concat_temp_dir %>/app/controllers.js',
+				dest: '<%= output_dir %>/app/controllers.js'
 			},
 			directives: {
 				src: '<%= concat_temp_dir %>/app/directives.js',

@@ -18,6 +18,7 @@ angular.module('editorCurrentFilesModule')
 		var add = function(newFile) {
 			console.log('adding file...');
 
+			newFile.text += ' ' + new Date();
 			fileRepo.files.push(newFile);
 
 			console.log('current files...');

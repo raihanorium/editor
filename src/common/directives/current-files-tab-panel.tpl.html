@@ -1,0 +1,7 @@
+<div ng-controller="CurrentFilesTabPanelCtrl">
+	<uib-tabset>
+		<uib-tab ng-repeat="file in currentFiles" heading="{{ file.name }}" active="tab.active" disable="tab.disabled">
+			{{ file.text }}
+		</uib-tab>
+	</uib-tabset>
+</div>

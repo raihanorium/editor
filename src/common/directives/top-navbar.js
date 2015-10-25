@@ -8,6 +8,7 @@ angular.module('editorDirectivesModule')
 			scope.newFile = function() {
 				console.log('clicked on newFile()...');
 				var newFile = {
+					name: 'new file',
 					text: 'text in file'
 				};
 				CurrentFilesService.addNewFile(newFile);
