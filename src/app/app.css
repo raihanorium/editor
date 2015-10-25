@@ -10,5 +10,10 @@ body {color: #ccc; background-color: #333;}
 .top-navbar .dropdown-menu>li>a:hover {color: #fff; background-color: #444;}
 
 .current-files-tab-panel .nav>li.active>a {background-color: #fff; color: #000;}
-.current-files-tab-panel .nav>li>a {padding: 3px 15px; color: #ccc; background-color: #555;}
+.current-files-tab-panel .nav>li>a {padding: 3px 5px; color: #ccc; background-color: #555;}
 .current-files-tab-panel .nav-tabs {border-bottom: 1px solid #555;}
+
+.modal-content {background-color: #333;}
+
+.file-close-icon {padding-left: 10px; top: 2px; cursor: pointer;}
+.current-files-tab-panel .nav>li.active>a .file-close-icon:hover {color: red;}

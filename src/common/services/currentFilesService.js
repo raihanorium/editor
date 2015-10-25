@@ -16,17 +16,27 @@ angular.module('editorCurrentFilesModule')
 
 		// adds a given file to the fileRepo
 		var add = function(newFile) {
-			console.log('adding file...');
-
+			newFile.id = (fileRepo.files.length == 0)? 1: (fileRepo.files[fileRepo.files.length - 1].id + 1);
 			newFile.text += ' ' + new Date();
 			fileRepo.files.push(newFile);
+			console.log(newFile);
+		}
 
-			console.log('current files...');
+		// removes a file with id from the files array
+		var close = function(id) {
+			for (var i = fileRepo.files.length - 1; i >= 0; i--) {
+				if(fileRepo.files[i].id === id){
+					fileRepo.files.splice(i, 1);
+				}
+			};
+
+			console.log('current files: ');
 			console.log(fileRepo.files);
 		}
 
 		return {
 			getCurrentFiles: getAll,
-			addNewFile: add
+			addNewFile: add,
+			closeFile: close
 		};
 	}])
