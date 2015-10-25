@@ -17,9 +17,11 @@ angular.module('editorCurrentFilesModule')
 		// adds a given file to the fileRepo
 		var add = function(newFile) {
 			console.log('adding file...');
-			console.log(newFile);
 
 			fileRepo.files.push(newFile);
+
+			console.log('current files...');
+			console.log(fileRepo.files);
 		}
 
 		return {
