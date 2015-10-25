@@ -1,4 +1,9 @@
-angular.module('editorApp', ['editorCurrentFilesModule', 'editorDirectivesModule', 'ui.bootstrap'])
+angular.module('editorApp', [
+		'editorCurrentFilesModule',
+		'editorDirectivesModule',
+		'editorComponentsModule',
+		'ui.bootstrap'
+	])
 
 	.controller('AppCtrl', ['$scope', 'CurrentFilesService', 'TopMenuService', function($scope, CurrentFilesService, TopMenuService) {
 		console.log('app initiated...');
@@ -13,3 +18,6 @@ angular.module('editorCurrentFilesModule', []);
 
 // directives module
 angular.module('editorDirectivesModule', ['editorMenuModule']);
+
+// components module
+angular.module('editorComponentsModule', []);

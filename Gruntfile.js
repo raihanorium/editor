@@ -98,6 +98,12 @@ module.exports = function (grunt) {
 			services: {
 				src: '<%= concat_temp_dir %>/app/services.js',
 				dest: '<%= output_dir %>/app/services.js'
+			},
+			services_templates: {
+				cwd: 'src/common/services',
+				src: '*.html',
+				dest: '<%= output_dir %>/app/',
+				expand: true
 			}
 		},
 
