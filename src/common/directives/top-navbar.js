@@ -6,8 +6,6 @@ angular.module('editorDirectivesModule')
 			scope.menu_items = TopMenuService.getAsJson();
 
 			scope.newFile = function() {
-				console.log('clicked on newFile()...');
-
 				// calling modal
 				var modalOptions = {
 					closeButtonText: 'Cancel',
@@ -19,7 +17,7 @@ angular.module('editorDirectivesModule')
 				ModalService.showModal({}, modalOptions).then(function (result) {
 					var newFile = {
 						name: 'new file',
-						text: 'text in file'
+						text: 'text in file ' + new Date()
 					};
 					CurrentFilesService.addNewFile(newFile);
 				});

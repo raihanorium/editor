@@ -3,7 +3,7 @@
 		<uib-tab ng-repeat="file in currentFiles" active="file.active" disable="file.disabled">
 			<uib-tab-heading>
 				{{ file.name }}
-	        	<i ng-click="close(file.id)" class="glyphicon glyphicon-remove-sign pull-right file-close-icon"></i>
+	        	<i ng-click="close($event, file.id)" class="glyphicon glyphicon-remove-sign pull-right file-close-icon"></i>
 	      	</uib-tab-heading>
 			{{ file.text }}
 		</uib-tab>
