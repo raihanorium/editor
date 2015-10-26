@@ -2,7 +2,6 @@ angular.module('editorDirectivesModule')
 
 	.directive('editorEditBox', [function () {
 		var linkFunction = function(scope, elem, attrs) {
-			console.log(elem);
 			scope.text = elem.text();
 		}
 
