@@ -5,7 +5,10 @@
 				{{ file.name }}
 	        	<i ng-click="close($event, file.id)" class="glyphicon glyphicon-remove-sign pull-right file-close-icon"></i>
 	      	</uib-tab-heading>
-			{{ file.text }}
+
+			<div class="edit-box-container">
+				<editor-edit-box contentEditable="true">{{ file.text }}</editor-edit-box>
+			</div>
 		</uib-tab>
 	</uib-tabset>
 </div>

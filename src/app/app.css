@@ -17,3 +17,6 @@ body {color: #ccc; background-color: #333;}
 
 .file-close-icon {padding-left: 10px; top: 2px; cursor: pointer;}
 .current-files-tab-panel .nav>li.active>a .file-close-icon:hover {color: red;}
+
+.edit-box-container {max-height: 500px; overflow-y: auto; overflow-x: hidden;}
+.edit-box {background-color: #fff; color: #000; padding: 5px;}
