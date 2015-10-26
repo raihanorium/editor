@@ -1,12 +1,8 @@
 angular.module('editorDirectivesModule')
 
-	.directive('currentFilesTabPanel', ['CurrentFilesService', function (CurrentFilesService) {
+	.directive('currentFilesTabPanel', [function () {
 		var linkFunction = function(scope, elem, attrs){
 			elem.addClass('current-files-tab-panel');
-
-			scope.close = function(fileId) {
-				CurrentFilesService.closeFile(fileId);
-			};
 		};
 
 		return {
