@@ -57,6 +57,10 @@ module.exports = function (grunt) {
 				src: 'src/index.html',
 				dest: '<%= output_dir %>/index.html'
 			},
+			favicon: {
+				src: 'favicon.ico',
+				dest: '<%= output_dir %>/favicon.ico'
+			},
 			vendor_css: {
 				src: '<%= vendor_files.css %>',
 				dest: '<%= output_dir %>/'
