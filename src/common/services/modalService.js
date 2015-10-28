@@ -52,4 +52,20 @@ angular.module('editorComponentsModule')
             return modalInstance;
         };
 
+        this.showNewFileDialog = function () {
+            var customModalDefaults = {
+                templateUrl:'app/modal-dialog-new-file.tpl.html',
+                size: 'sm'
+            };
+
+            var customModalOptions = {
+                closeButtonText: 'Cancel',
+                actionButtonText: 'Create',
+                headerText: 'New File',
+                bodyText: 'Please enter a name for the file'
+            };
+
+            customModalDefaults.backdrop = 'static';
+            return this.show(customModalDefaults, customModalOptions);
+        };
     }])

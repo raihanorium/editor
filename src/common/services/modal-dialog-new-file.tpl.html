@@ -1,13 +1,15 @@
 <div class="modal-header">
-	<h3>{{modalOptions.headerText}}</h3>
+	<h4>{{modalOptions.headerText}}</h4>
 </div>
 <div class="modal-body">
 	<p>{{modalOptions.bodyText}}</p>
-	<input type="text" class="form-control input-sm" ng-model="file_name" autofocus />
+	<form ng-submit="(file_name && modalOptions.ok())">
+		<input type="text" class="form-control input-sm" ng-model="file_name" autofocus />
+	</form>
 </div>
 <div class="modal-footer">
-	<button type="button" class="btn"
+	<button type="button" class="btn btn-default btn-xs"
 		data-ng-click="modalOptions.close()">{{modalOptions.closeButtonText}}</button>
-	<button class="btn btn-primary"  ng-disabled="!file_name"
+	<button class="btn btn-danger btn-xs"  ng-disabled="!file_name"
 		data-ng-click="modalOptions.ok();">{{modalOptions.actionButtonText}}</button>
 </div>

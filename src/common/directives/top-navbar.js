@@ -6,20 +6,10 @@ angular.module('editorDirectivesModule')
 			scope.menu_items = TopMenuService.getAsJson();
 
 			scope.newFile = function() {
-				// calling modal
-				var modalOptions = {
-					closeButtonText: 'Cancel',
-					actionButtonText: 'Create',
-					headerText: 'New File',
-					bodyText: 'Please enter a name for the file'
-				};
+				// calling new file dialog
+				ModalService.showNewFileDialog().then(function (result) {
+					var newFile = {name: result.fileName};
 
-				ModalService.showModal({templateUrl:'app/modal-dialog-new-file.tpl.html'}, modalOptions).then(function (result) {
-					console.log(result);
-					var newFile = {
-						name: result.fileName,
-						text: 'text in file ' + new Date()
-					};
 					CurrentFilesService.addNewFile(newFile);
 				});
 			}
