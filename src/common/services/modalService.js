@@ -6,7 +6,7 @@ angular.module('editorComponentsModule')
         var modalDefaults = {
             backdrop: true,
             keyboard: true,
-            modalFade: false,
+            animation: false,
             templateUrl: 'app/modal-dialog.tpl.html'
         };
 
@@ -37,7 +37,9 @@ angular.module('editorComponentsModule')
             if (!tempModalDefaults.controller) {
                 tempModalDefaults.controller = function ($scope, $uibModalInstance) {
                     $scope.modalOptions = tempModalOptions;
-                    $scope.modalOptions.ok = function (result) {
+                    $scope.modalOptions.ok = function () {
+                        var result = {};
+                        result.fileName = $scope.file_name;
                         $uibModalInstance.close(result);
                     };
                     $scope.modalOptions.close = function (result) {
@@ -46,7 +48,8 @@ angular.module('editorComponentsModule')
                 }
             }
 
-            return $uibModal.open(tempModalDefaults).result;
+            var modalInstance = $uibModal.open(tempModalDefaults).result;
+            return modalInstance;
         };
 
     }])

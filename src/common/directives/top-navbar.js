@@ -10,13 +10,14 @@ angular.module('editorDirectivesModule')
 				var modalOptions = {
 					closeButtonText: 'Cancel',
 					actionButtonText: 'Create',
-					headerText: 'Delete?',
-					bodyText: 'Are you sure you want to delete this customer?'
+					headerText: 'New File',
+					bodyText: 'Please enter a name for the file'
 				};
 
-				ModalService.showModal({}, modalOptions).then(function (result) {
+				ModalService.showModal({templateUrl:'app/modal-dialog-new-file.tpl.html'}, modalOptions).then(function (result) {
+					console.log(result);
 					var newFile = {
-						name: 'new file',
+						name: result.fileName,
 						text: 'text in file ' + new Date()
 					};
 					CurrentFilesService.addNewFile(newFile);
