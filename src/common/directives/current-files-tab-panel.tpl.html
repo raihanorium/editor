@@ -6,8 +6,8 @@
 	        	<i title="Close this file" ng-click="close($event, file.id)" class="glyphicon glyphicon-remove-sign pull-right file-close-icon"></i>
 	      	</uib-tab-heading>
 
-			<div class="edit-box-container" ng-style="{'max-height': maxHeight}">
-				<editor-edit-box contentEditable="true" ng-style="{'min-height': maxHeight}">{{ file.text }}</editor-edit-box>
+			<div class="edit-box-container" ng-style="{'max-height': (maxHeight + 5) + 'px'}">
+				<editor-edit-box contentEditable="true" ng-style="{'min-height': maxHeight + 'px'}">{{ file.text }}</editor-edit-box>
 			</div>
 		</uib-tab>
 	</uib-tabset>
