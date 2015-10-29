@@ -5,7 +5,7 @@ angular.module('editorApp', [
 		'ui.bootstrap'
 	])
 
-	.controller('AppCtrl', ['$scope', 'CurrentFilesService', 'TopMenuService', function($scope, CurrentFilesService, TopMenuService) {
+	.controller('AppCtrl', [function() {
 		console.log('app initiated...');
 	}])
 ;
